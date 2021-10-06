@@ -81,7 +81,58 @@ os.system('cls' if os.name == 'nt' else 'clear')
 # person1.set_details('Rafe', 39, 'Istanbul')
 # person1.salute()
 
-# Special Methods
+# # Special Methods
+# class Person:
+#     company = 'Clarusway'
+
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+
+#     def __str__(self):
+#         return f"Name: {self.name}     Age: {self.age}"
+
+#     def __len__(self):
+#         return self.age
+
+
+# person1 = Person('Barry', 44)
+# # print(person1.name, person1.age)
+
+# # person2 = Person('Rafe', 39)
+# # print(person2.name, person2.age)
+
+# lst = [1, 2, 3]
+# print(len(lst))
+# print(len(person1))
+# print(person1.__len__())
+
+# abstraction and encapsulation
+
+# lst = [3, 2, 5, 9, 1]
+# lst.sort()
+# print(lst)
+
+# class Person:
+#     company = 'Clarusway'
+
+#     def __init__(self, name, age):
+#         self.name = name
+#         self.age = age
+#         self._id = 5000
+#         self.__id1 = 4000
+
+#     def __str__(self):
+#         return f"Name: {self.name}     Age: {self.age}"
+
+
+# person1 = Person('rafe', 39)
+# # person1.__id1 = 8000
+# print(person1.__id1)
+# person1._Person__id1 = 3000
+# print(person1._Person__id1)
+
+# inheritance and polymorphism
 class Person:
     company = 'Clarusway'
 
@@ -92,17 +143,14 @@ class Person:
     def __str__(self):
         return f"Name: {self.name}     Age: {self.age}"
 
-    def __len__(self):
-        return self.age
+
+class Employee(Person):
+    def __init__(self, name, age, path):
+        # self.name = name
+        # self.age = age
+        super().__init__(name, age)
+        self.path = path
 
 
-person1 = Person('Barry', 44)
-# print(person1.name, person1.age)
-
-# person2 = Person('Rafe', 39)
-# print(person2.name, person2.age)
-
-lst = [1, 2, 3]
-print(len(lst))
-print(len(person1))
-print(person1.__len__())
+emp1 = Employee('Barry', 44, 'FS')
+print(emp1)
